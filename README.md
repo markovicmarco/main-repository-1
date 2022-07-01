@@ -1,21 +1,16 @@
 # An interactive blockchain online experience by the community.
 
 ![logo32x32](https://user-images.githubusercontent.com/52882128/175814022-41a6feb7-b474-47d3-bb92-6dd2c0c7e1f4.png)
-- [discord](https://discord.gg/RMka34MTEC)
-- [github](https://github.com/izzzy-xyz)
-- [linkedin](https://www.linkedin.com/company/izzzy/)
-- [twitter](https://twitter.com/izzzy_xyz)
-- [website](https://izzzy.xyz/)
 
 [![alt text][1.1]][1]
 [![alt text][2.1]][2]
 [![alt text][3.1]][3]
 [![alt text][4.1]][4]
 
-[1.1]: https://i.imgur.com/hUZeW5B.png (discord)
-[2.1]: https://i.imgur.com/qAtWJ00.png (github)
-[3.1]: https://i.imgur.com/aPJIzQL.png (linkedin)
-[4.1]: https://i.imgur.com/MKnsgkc.png (twitter)
+[1.1]: https://i.imgur.com/ckarvJq.png (discord)
+[2.1]: https://i.imgur.com/xozRmO6.png (github)
+[3.1]: https://i.imgur.com/2ZtkugE.png (linkedin)
+[4.1]: https://imgur.com/9HQg17g (twitter)
 
 [1]: https://discord.gg/RMka34MTEC
 [2]: https://github.com/izzzy-xyz
