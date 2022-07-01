@@ -1,5 +1,12 @@
 # An interactive blockchain online experience by the community.
 
+![logo32x32](https://user-images.githubusercontent.com/52882128/175814022-41a6feb7-b474-47d3-bb92-6dd2c0c7e1f4.png)
+- [discord](https://discord.gg/RMka34MTEC)
+- [github](https://github.com/izzzy-xyz)
+- [linkedin](https://www.linkedin.com/company/izzzy/)
+- [twitter](https://twitter.com/izzzy_xyz)
+- [website](https://izzzy.xyz/)
+
 It includes the following features:
 
 - NFT thirdweb drop contract for minting NFTs and makes them available to be claimed by users
