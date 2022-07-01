@@ -10,7 +10,7 @@
 [1.1]: https://i.imgur.com/ckarvJq.png (discord)
 [2.1]: https://i.imgur.com/xozRmO6.png (github)
 [3.1]: https://i.imgur.com/2ZtkugE.png (linkedin)
-[4.1]: https://imgur.com/9HQg17g (twitter)
+[4.1]: https://i.imgur.com/9HQg17g.png (twitter)
 
 [1]: https://discord.gg/RMka34MTEC
 [2]: https://github.com/izzzy-xyz
