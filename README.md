@@ -11,19 +11,16 @@
 [![alt text][2.1]][2]
 [![alt text][3.1]][3]
 [![alt text][4.1]][4]
-[![alt text][5.1]][5]
 
 [1.1]: https://i.imgur.com/hUZeW5B.png (discord)
-[2.1]: https://i.imgur.com/eZrUlQQ.png (github)
-[3.1]: https://i.imgur.com/Ljg2vjb.png (linkedin)
-[4.1]: https://i.imgur.com/1hJ5mqe.png (twitter)
-[5.1]: https://i.imgur.com/Zm6T6Ak.png (izzzy)
+[2.1]: https://i.imgur.com/qAtWJ00.png (github)
+[3.1]: https://i.imgur.com/aPJIzQL.png (linkedin)
+[4.1]: https://i.imgur.com/MKnsgkc.png (twitter)
 
-[1]: http://www.twitter.com/carlsednaoui
-[2]: http://www.facebook.com/sednaoui
-[3]: https://plus.google.com/+CarlSednaoui
-[4]: http://carlsed.tumblr.com
-[5]: http://dribbble.com/carlsednaoui
+[1]: https://discord.gg/RMka34MTEC
+[2]: https://github.com/izzzy-xyz
+[3]: https://www.linkedin.com/company/izzzy/
+[4]: https://twitter.com/izzzy_xyz
 
 It includes the following features:
 
