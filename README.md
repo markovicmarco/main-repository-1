@@ -13,11 +13,11 @@
 [![alt text][4.1]][4]
 [![alt text][5.1]][5]
 
-[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
-[2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
-[3.1]: http://i.imgur.com/yCsTjba.png (google plus icon with padding)
-[4.1]: http://i.imgur.com/YckIOms.png (tumblr icon with padding)
-[5.1]: http://i.imgur.com/1AGmwO3.png (dribbble icon with padding)
+[1.1]: https://i.imgur.com/upHbDjt.png (discord)
+[2.1]: https://i.imgur.com/eZrUlQQ.png (github)
+[3.1]: https://i.imgur.com/Ljg2vjb.png (linkedin)
+[4.1]: https://i.imgur.com/1hJ5mqe.png (twitter)
+[5.1]: https://i.imgur.com/Zm6T6Ak.png (izzzy)
 
 [1]: http://www.twitter.com/carlsednaoui
 [2]: http://www.facebook.com/sednaoui
