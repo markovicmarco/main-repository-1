@@ -1,7 +1,5 @@
 # An interactive blockchain online experience by the community.
 
-![logo32x32](https://user-images.githubusercontent.com/52882128/175814022-41a6feb7-b474-47d3-bb92-6dd2c0c7e1f4.png)
-
 [![alt text][1.1]][1]
 [![alt text][2.1]][2]
 [![alt text][3.1]][3]
@@ -226,3 +224,6 @@ The demo ([demo.vercel.events](https://demo.vercel.events/)) uses [Redis](https
 Provision your own Redis instance and set `REDIS_PORT`, `REDIS_URL`, `REDIS_PASSWORD`, `REDIS_SSL_ENABLED` and `REDIS_EMAIL_TO_ID_SECRET` (come up with your own secret string) on [Vercel Project Environment Variables Settings](https://vercel.com/docs/environment-variables) for the production environment.
 
 If you do not want to maintain a Redis server, you can use [Upstash](https://upstash.com/) which provides Serverless Redis with a free tier.
+
+
+![logo32x32](https://user-images.githubusercontent.com/52882128/175814022-41a6feb7-b474-47d3-bb92-6dd2c0c7e1f4.png)
