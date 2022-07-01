@@ -13,7 +13,7 @@
 [![alt text][4.1]][4]
 [![alt text][5.1]][5]
 
-[1.1]: https://i.imgur.com/upHbDjt.png (discord)
+[1.1]: https://i.imgur.com/hUZeW5B.png (discord)
 [2.1]: https://i.imgur.com/eZrUlQQ.png (github)
 [3.1]: https://i.imgur.com/Ljg2vjb.png (linkedin)
 [4.1]: https://i.imgur.com/1hJ5mqe.png (twitter)
