@@ -31,7 +31,7 @@ const activeChainId = ChainId.Mainnet;
  export default function Nfts() {
    const meta = {
      title: 'Nft - Discover upcoming NFTs minting right now',
-     description: 'List of actual ICO and NFT collection minting dates, rating, ongoing, and upcoming projects.'
+     description: 'List of actual ICO and NFT collection minting dates, rating, ongoing, and upcoming projects. Just be patient and enjoy the journey to the metaverse without losing focus. It will take a while to get an established value. Nothing great ever happens overnight!'
    };
  
    return (
