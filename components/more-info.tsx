@@ -66,6 +66,16 @@ export default function MoreInfo() {
               Document that explains released purpose of the project.
             </p>
           </a>
+          <a
+            href="https://foundico.com/ico/izzzy.html" className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2>ICO Score &rarr;</h2>
+            <p>
+              Foundico.com semi-automatic quality score for ICO.
+            </p>
+          </a>
         </div>
       </main>
     </div>
