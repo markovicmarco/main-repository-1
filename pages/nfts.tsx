@@ -22,6 +22,8 @@
  import ListedNfts from '@components/thirdweb/listed';
  import { ThirdwebProvider } from '@thirdweb-dev/react';
  import { ChainId } from '@thirdweb-dev/sdk';
+import Header from '@components/header';
+import { Counter } from '@components/counter';
  
  // This is the chainId your dApp will work on.
 const activeChainId = ChainId.Mainnet;
@@ -29,13 +31,15 @@ const activeChainId = ChainId.Mainnet;
  export default function Nfts() {
    const meta = {
      title: 'Nft - Discover upcoming NFTs minting right now',
-     description: META_DESCRIPTION
+     description: 'List of actual ICO and NFT collection minting dates, rating, ongoing, and upcoming projects.'
    };
  
    return (
     <ThirdwebProvider desiredChainId={activeChainId}>
      <Page meta={meta}>
        <Layout>
+       <Header hero="Listing" description={meta.description} />
+         <Counter />
          <ListedNfts children={meta}/>
        </Layout>
      </Page>
