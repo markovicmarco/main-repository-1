@@ -14,130 +14,153 @@
  * limitations under the License.
  */
 
-import { ChainId, useNetwork, useNFTDrop } from "@thirdweb-dev/react";
-import { useNetworkMismatch } from "@thirdweb-dev/react";
-import { useAddress, useMetamask } from "@thirdweb-dev/react";
-import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import styles from "./minting-page.module.css";
+ import { ChainId, useNetwork, useNFTDrop } from "@thirdweb-dev/react";
+ import { useNetworkMismatch } from "@thirdweb-dev/react";
+ import { useAddress, useMetamask } from "@thirdweb-dev/react";
+ import type { NextPage } from "next";
+ import { useEffect, useState } from "react";
+ import styles from "./minting-page.module.css";
+ 
+ // Put Your NFT Drop Contract address from the dashboard here
+ const myNftDropContractAddress = "0xBA5dcA17a2B11Dd29f93D0f1dD37D1283109feD9";
+ 
+ const Minting: NextPage = () => {
+   const nftDrop = useNFTDrop(myNftDropContractAddress);
+   const address = useAddress();
+   const connectWithMetamask = useMetamask();
+   const isOnWrongNetwork = useNetworkMismatch();
+   const [, switchNetwork] = useNetwork();
 
-// Put Your NFT Drop Contract address from the dashboard here
-const myNftDropContractAddress = "0xBA5dcA17a2B11Dd29f93D0f1dD37D1283109feD9";
+   // The amount the user claims, updates when they type a value into the input field.
+   const [quantity, setQuantity] = useState<number>(1); // default to 1
+   const [claiming, setClaiming] = useState<boolean>(false);
+ 
+   const [contractMetadata, setMetadata] = useState<{
+     name: string;
+     description?: string | undefined;
+     image?: string | undefined;
+   }>();
+ 
+   const [totalSupply, setTotalSupply] = useState<number>();
+   const [claimedSupply, setClaimedSupply] = useState<number>();
+ 
+   useEffect(() => {
+     (async () => {
+       const claimed = await nftDrop?.totalClaimedSupply();
+       const totalsupply = await nftDrop?.totalSupply();
+ 
+       setClaimedSupply(claimed?.toNumber());
+       setTotalSupply(totalsupply?.toNumber());
+ 
+       // Load NFT Drop Contract metadata
+       const metadata = await nftDrop?.metadata.get();
+       setMetadata(metadata);
+     })();
+   }, [nftDrop]);
+ 
+   // Loading state while we fetch the metadata
+   if (!nftDrop || !contractMetadata) {
+     return <div className={styles.container}>Loading...</div>;
+   }
+ 
+   // Function to mint/claim an NFT
+   async function mint() {
+     if (!address) {
+       connectWithMetamask();
+       return;
+     }
+ 
+     if (isOnWrongNetwork) {
+       switchNetwork && switchNetwork(ChainId.Mainnet);
+       return;
+     }
+ 
+     setClaiming(true);
+ 
+     try {
+       const minted = await nftDrop?.claim(1);
+       console.log(minted);
+       alert(`Successfully minted NFT!`);
+     } catch (error) {
+       console.error(error);
+       alert(error);
+     } finally {
+       setClaiming(false);
+     }
+   }
+ 
+   return (
+     <div className={styles.container}>
+       <div className={styles.mintInfoContainer}>
+         <div className={styles.infoSide}>
+           {/* Title of your NFT Collection */}
+           <h1>{contractMetadata?.name}</h1>
+           {/* Description of your NFT Collection */}
+           <p className={styles.description}>{contractMetadata?.description}</p>
+         </div>
+ 
+         <div className={styles.imageSide}>
+           {/* Image Preview of NFTs */}
+           <img
+             className={styles.image}
+             src={contractMetadata?.image}
+             alt={`${contractMetadata?.name} preview image`}
+           />
+ 
+           {address ? (
+            <>
+            <div className={styles.quantityContainer}>
+              <button
+                className={`${styles.quantityControlButton}`}
+                onClick={() => setQuantity(quantity - 1)}
+                disabled={quantity <= 1}
+              >
+                -
+              </button>
 
-const Minting: NextPage = () => {
-  const nftDrop = useNFTDrop(myNftDropContractAddress);
-  const address = useAddress();
-  const connectWithMetamask = useMetamask();
-  const isOnWrongNetwork = useNetworkMismatch();
-  const [, switchNetwork] = useNetwork();
+              <h4>{quantity}</h4>
 
-  const [claiming, setClaiming] = useState<boolean>(false);
-
-  const [contractMetadata, setMetadata] = useState<{
-    name: string;
-    description?: string | undefined;
-    image?: string | undefined;
-  }>();
-
-  const [totalSupply, setTotalSupply] = useState<number>();
-  const [claimedSupply, setClaimedSupply] = useState<number>();
-
-  useEffect(() => {
-    (async () => {
-      const claimed = await nftDrop?.totalClaimedSupply();
-      const totalsupply = await nftDrop?.totalSupply();
-
-      setClaimedSupply(claimed?.toNumber());
-      setTotalSupply(totalsupply?.toNumber());
-
-      // Load NFT Drop Contract metadata
-      const metadata = await nftDrop?.metadata.get();
-      setMetadata(metadata);
-    })();
-  }, [nftDrop]);
-
-  // Loading state while we fetch the metadata
-  if (!nftDrop || !contractMetadata) {
-    return <div className={styles.container}>Loading...</div>;
-  }
-
-  // Function to mint/claim an NFT
-  async function mint() {
-    if (!address) {
-      connectWithMetamask();
-      return;
-    }
-
-    if (isOnWrongNetwork) {
-      switchNetwork && switchNetwork(ChainId.Rinkeby);
-      return;
-    }
-
-    setClaiming(true);
-
-    try {
-      const minted = await nftDrop?.claim(1);
-      console.log(minted);
-      alert(`Successfully minted NFT!`);
-    } catch (error) {
-      console.error(error);
-      alert(error);
-    } finally {
-      setClaiming(false);
-    }
-  }
-
-  return (
-    <div className={styles.container}>
-      <div className={styles.mintInfoContainer}>
-        <div className={styles.infoSide}>
-          {/* Title of your NFT Collection */}
-          <h1>{contractMetadata?.name}</h1>
-          {/* Description of your NFT Collection */}
-          <p className={styles.description}>{contractMetadata?.description}</p>
-        </div>
-
-        <div className={styles.imageSide}>
-          {/* Image Preview of NFTs */}
-          <img
-            className={styles.image}
-            src={contractMetadata?.image}
-            alt={`${contractMetadata?.name} preview image`}
-          />
-
-          {address ? (
-            <button className={styles.mainButton} onClick={mint}>
-              Mint
-            </button>
-           ) : (
-            <button className={styles.mainButton} onClick={connectWithMetamask}>
-              Connect Wallet
-            </button> 
-          )}
-         
-          {/* Amount claimed so far */}
-          <div className={styles.mintCompletionArea}>
-            <div className={styles.mintAreaLeft}>
-              <p>Total Minted</p>
+              <button
+                className={`${styles.quantityControlButton}`}
+                onClick={() => setQuantity(quantity + 1)}
+                disabled={quantity >= 10}
+              >
+                +
+              </button>
             </div>
-            <div className={styles.mintAreaRight}>
-              {claimedSupply && totalSupply ? (
-                <p>
-                  <b>{claimedSupply}</b>
-                  {" / "}
-                  {totalSupply}
-                </p>
-              ) : (
-                <p>Loading...</p>
-              )}
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Minting;
+             <button className={styles.mainButton} onClick={mint}>
+               Mint
+             </button>
+             </>
+            ) : (
+             <button className={styles.mainButton} onClick={connectWithMetamask}>
+               Connect Wallet
+             </button> 
+           )}
+          
+           {/* Amount claimed so far */}
+           <div className={styles.mintCompletionArea}>
+             <div className={styles.mintAreaLeft}>
+               <p>Total Minted</p>
+             </div>
+             <div className={styles.mintAreaRight}>
+               {claimedSupply && totalSupply ? (
+                 <p>
+                   <b>{claimedSupply}</b>
+                   {" / "}
+                   {totalSupply}
+                 </p>
+               ) : (
+                 <p>Loading...</p>
+               )}
+             </div>
+           </div>
+ 
+         </div>
+       </div>
+     </div>
+   );
+ };
+ 
+ export default Minting;
 
