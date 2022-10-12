@@ -47,7 +47,7 @@ export default function MoreInfo() {
           </a>
 
           <a
-            href="https://polygonscan.com/token/0xA198c90fd67c5d3e96C830a18705C8705F3ae3b0" className={styles.card}
+            href="https://polygonscan.com/token/0x612e62488A2d36018ec7539a6a8BcfFC412B5eD6" className={styles.card}
             target="_blank"
             rel="noopener noreferrer"
           >
