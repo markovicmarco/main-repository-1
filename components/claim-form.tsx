@@ -32,7 +32,7 @@
    sharePage?: boolean;
  };
  
- export default function Form({ sharePage }: Props) {
+ export default function ClaimForm({ sharePage }: Props) {
    const [email, setEmail] = useState('');
    const [errorMsg, setErrorMsg] = useState('');
    const [errorTryAgain, setErrorTryAgain] = useState(false);
@@ -136,7 +136,7 @@
        className={cn(styles.form, {
          [styles['share-page']]: sharePage
        })}
-     >
+     > 
        <div className={styles['form-row']}>
          <div className={cn(styles['input-label'], styles.error)}>
            <div className={cn(styles.input, styles['input-text'])}>{errorMsg}</div>
@@ -170,14 +170,14 @@
            <input
              className={styles.input}
              autoComplete="off"
-             type="email"
+             type="text"
              id="email-input-field"
              value={email}
              onChange={e => setEmail(e.target.value)}
              onFocus={() => setFocused(true)}
              onBlur={() => setFocused(false)}
-             placeholder="Enter PRE ICO to mint tokens &rarr;"
-             aria-label="Enter PRE ICO to mint tokens"
+             placeholder="Enter amount to claim"
+             aria-label="Your email address"
              required
            />
          </label>
@@ -186,20 +186,11 @@
            className={cn(styles.submit, styles.register, styles[formState])}
            disabled={formState === 'loading'}
          >
-           {formState === 'loading' ? <LoadingDots size={4} /> : 
-           <>
-           <a
-                   href={'https://izzzyswap.xyz/drop'}
-                   className={styles['footer-link']}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                 >
-                   Open App
-                 </a>
-           </>}
+           {formState === 'loading' ? <LoadingDots size={4} /> : <>Claim</>}
          </button>
        </div>
        <Captcha ref={captchaRef} onVerify={handleRegister} />
      </form>
    );
  }
+ 

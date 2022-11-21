@@ -12,7 +12,7 @@ export const Counter = () => {
 
   return (
     <div className={styles.container}> 
-      <h1 className={styles.h1}>Initial coin offering ends in</h1>
+      <h1 className={styles.h1}>Token drop ends in</h1>
      <div className={styles.counter}>
       <div className={styles.counterItem}>
         <span className={styles.value}>
@@ -40,13 +40,6 @@ export const Counter = () => {
           {String(timeLeft.seconds).padStart(2, '0')}
         </span>
         <span className={styles.label}>Seconds</span>
-      </div>
-
-      <div className={styles.counterItem}>
-      <a href="https://foundico.com/ico/izzzy.html" target="_blank" rel="nofollow" title="IZZZY on Foundico.com">
-        <img className={styles.img} src="https://foundico.com/widget/?p=35543&f=s" alt="IZZZY score on Foundico.com" />
-      </a>
-      <span className={styles.label}>ICO Score</span>
       </div>
      </div>
     </div>

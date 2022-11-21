@@ -1,6 +1,7 @@
 /**
  * Copyright 2020 Vercel Inc.
  *
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +20,7 @@
  import styles from './footer.module.css';
  import { COPYRIGHT_HOLDER, SITE_NAME, SMART_CONTRACT, LEGAL_URL, REPO } from '@lib/constants';
  
- export function HostedByVercel() {
+ export function CreatedByVercel() {
    return (
      <a
        href="https://vercel.com"
@@ -38,7 +39,7 @@
      <footer className={cn(styles.footer)}>
        <div className={styles['footer-legal']}>
          <div className={styles['footer-hostedby']}>
-           <HostedByVercel />
+           <CreatedByVercel />
            <div className={styles['footer-separator']} />
          </div>
          <div className={styles['footer-copyright']}>
@@ -64,7 +65,7 @@
                target="_blank"
                rel="noopener noreferrer"
              >
-               Etherscan Block Explorer
+               Polygonscan Block Explorer
              </a>
            </p>
            {LEGAL_URL && (

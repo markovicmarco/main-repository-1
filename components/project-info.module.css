@@ -13,30 +13,32 @@
     align-items: center;
   }
   
-  .grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .card {
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: left;
     color: var(--secondary-color);
-    flex-wrap: wrap;
-    max-width: 80%;
+    text-decoration: none;
+    border: rgba(255, 255, 255, 0.25) 1px solid;
+    border-radius: 10px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    max-width: 100vh;
   }
   
-  .grid h2 {
+  .card:hover,
+  .card:focus,
+  .card:active {
+    color: var(--accents-2);
+    border-color: var(--brand);
+  }
+  
+  .card h2 {
     margin: 0 0 1rem 0;
     font-size: 1.5rem;
-    margin-right: 20px;
   }
   
-  .grid p {
+  .card p {
     margin: 0;
     font-size: 1.25rem;
     line-height: 1.5;
-  }
-  
-  @media (max-width: 600px) {
-    .grid {
-      width: 100%;
-      flex-direction: column;
-    }
   }

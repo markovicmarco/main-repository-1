@@ -20,7 +20,7 @@ export default function ProjectInfo() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-      <div className={styles.grid}>
+      <div className={styles.card}>
            <h2>Vision </h2>
             <p>
             Our vision is to create a recognizable decentralized brand. 
@@ -28,7 +28,7 @@ export default function ProjectInfo() {
             Non-fungible assets and the virtual world on Ethereum.
             </p>
         </div>
-        <div className={styles.grid}>
+        <div className={styles.card}>
            <h2>Smart Contract </h2>
             <p>
             Deploying NFT contract on the Ethereum network. 
@@ -36,7 +36,7 @@ export default function ProjectInfo() {
             Embedding the mint button on our website.
             </p>
         </div>
-        <div className={styles.grid}>
+        <div className={styles.card}>
            <h2>Community </h2>
             <p>
             Everything starts and ends with the community. 
@@ -44,7 +44,7 @@ export default function ProjectInfo() {
             Built and owned by the community.
             </p>
         </div>
-        <div className={styles.grid}>
+        <div className={styles.card}>
            <h2>Pre-sale Mint </h2>
             <p>
             Presale minting links available at discord. 
@@ -52,7 +52,7 @@ export default function ProjectInfo() {
             The earliest possible opportunity.
             </p>
         </div>
-        <div className={styles.grid}>
+        <div className={styles.card}>
            <h2>Physical Assets </h2>
             <p>
             Designing clothing for the metaverse. 
@@ -60,7 +60,7 @@ export default function ProjectInfo() {
             Collaboration with fashion brands and influencers.
             </p>
         </div>
-        <div className={styles.grid}>
+        <div className={styles.card}>
            <h2>Public Minting </h2>
             <p>
             The process of public minting. 
@@ -68,7 +68,7 @@ export default function ProjectInfo() {
             Opportunity for early backers.
             </p>
         </div>
-        <div className={styles.grid}>
+        <div className={styles.card}>
            <h2>Giveaway </h2>
             <p>
             Access to exclusive giveaways for our community. 
@@ -76,20 +76,20 @@ export default function ProjectInfo() {
             Pleasant surprise for supporters.
             </p>
         </div>
-        <div className={styles.grid}>
-           <h2>Web3 Game </h2>
-            <p>
-            Virtual experiences on the Blockchain. 
-            Public developing virtual and metaverse world modeling. 
-            Empower creators to build the game they have always envisioned.
-            </p>
-        </div>
-        <div className={styles.grid}>
+        <div className={styles.card}>
            <h2>Token Creation </h2>
             <p>
             A currency that people can use in the metaverse. 
             Shop, game, buy and trade assets, objects, and more. 
             Fair distribution to nft holders and community members.
+            </p>
+        </div>
+        <div className={styles.card}>
+           <h2>Web3 Game </h2>
+            <p>
+            Virtual experiences on the Blockchain. 
+            Public developing virtual and metaverse world modeling. 
+            Empower creators to build the game they have always envisioned.
             </p>
         </div>
       </main>

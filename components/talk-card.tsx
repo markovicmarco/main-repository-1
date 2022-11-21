@@ -54,7 +54,7 @@ export default function TalkCard({ talk: { title, speaker, start, end }, showTim
             [styles['is-live']]: isTalkLive
           })}
         >
-          <div className={styles['card-body']}>
+          <div className={styles['card-body']}> 
             <h4 title={title} className={styles.title}>
               {title}
             </h4>
@@ -75,7 +75,7 @@ export default function TalkCard({ talk: { title, speaker, start, end }, showTim
                 ))}
               </div>
               <h5 className={styles.name}>
-                {speaker.length === 1 ? speaker[0].name : `${speaker.length} speakers`}
+                {speaker.length === 1 ? speaker[0].name : `${speaker.length} contributors`}
               </h5>
             </div>
           </div>

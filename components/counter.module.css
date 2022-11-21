@@ -1,5 +1,5 @@
 .container {
-    margin-top: 96px;
+    margin: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,6 +10,9 @@
  
 .h1 {
     color: #8a8f98;
+    background: -webkit-linear-gradient(145.34deg, #74a5ff 25.75%, #0d5294 79.56%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 2.7em;
 }
 
@@ -29,18 +32,16 @@
     justify-content: center;
     align-items: center;
     border-radius: 0.25rem;
-    background: #0e0e10;
 }
   
 span.label {
     font-size: 0.8rem;
-    color: #8a8f98;
+    color: #8a8f98; 
     width: 100%;
     text-transform: uppercase;
     font-weight: 700;
     text-align: center;
     margin-top: 0.1rem;
-    background: #0e0e10;
 }
   
 span.value {
