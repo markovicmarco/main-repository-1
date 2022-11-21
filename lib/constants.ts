@@ -17,17 +17,17 @@
 export const SITE_URL = 'https://izzzy.xyz';
 export const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_ORIGIN || new URL(SITE_URL).origin;
 export const TWITTER_USER_NAME = 'izzzy_xyz';
-export const BRAND_NAME = 'izzzy';
+export const BRAND_NAME = 'izzzy swap';
 export const SITE_NAME_MULTILINE = ['IZZZY', 'Inc'];
 export const SITE_NAME = 'IZZZY Inc';
-export const META_NAME = 'NFT';
+export const META_NAME = 'ICO';
 export const META_DESCRIPTION =
   'Ethereum NFT project. Made through the collaboration of creators, designers, and developers by the crypto community!';
 export const SITE_DESCRIPTION =
   'An interactive blockchain online experience by the community.';
-export const DATE = '30 June 2022';
-export const SHORT_DATE = 'Jun 30 - 9:00am PST';
-export const FULL_DATE = 'Jun 30th 9am Pacific Time (GMT-7)';
+export const DATE = '15 December 2022';
+export const SHORT_DATE = 'Dec 15 - 9:00am PST';
+export const FULL_DATE = 'Dec 15th 9am Pacific Time (GMT-7)';
 export const TWEET_TEXT = META_DESCRIPTION;
 export const COOKIE = 'user-id';
 
@@ -37,25 +37,17 @@ export const LEGAL_URL = '/legal';
 export const COPYRIGHT_HOLDER = process.env.NEXT_PUBLIC_COPYRIGHT_HOLDER;
 
 export const SMART_CONTRACT =
-  'https://etherscan.io/tx/0xa9d1e20bbb31e69982e5c74e09cb1cb60ef9aafa8c9aca7df4bdffe7b9381fef';
+  'https://polygonscan.com/token/0x612e62488A2d36018ec7539a6a8BcfFC412B5eD6';
 export const REPO = 'https://twitter.com/izzzy_xyz';
 export const SAMPLE_TICKET_NUMBER = 1234;
 export const NAVIGATION = [
   {
-    name: 'Minting',
-    route: '/mint'
+    name: 'Pre Ico',
+    route: '/drop'
   },
   {
-    name: 'Izzzy Stage',
-    route: '/stage/c'
-  },
-  {
-    name: 'Contributors',
-    route: '/contributors'
-  },
-  {
-    name: 'Listing',
-    route: '/nfts'
+    name: 'Roles',
+    route: '/roles'
   },
   {
     name: 'Info',
@@ -68,18 +60,6 @@ export const NAVIGATION = [
   {
     name: 'Discord',
     route: '/discord'
-  },
-  {
-    name: 'Jobs',
-    route: '/jobs'
-  },
-  {
-    name: 'Schedule',
-    route: '/schedule'
-  },
-  {
-    name: 'Expo',
-    route: '/expo'
   },
 ];
 
