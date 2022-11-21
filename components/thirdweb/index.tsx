@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
- import { ChainId, useNetwork, useNFTDrop } from "@thirdweb-dev/react";
+ import { ChainId, useNetwork, useTokenDrop } from "@thirdweb-dev/react";
  import { useNetworkMismatch } from "@thirdweb-dev/react";
  import { useAddress, useMetamask } from "@thirdweb-dev/react";
  import type { NextPage } from "next";
@@ -22,10 +22,10 @@
  import styles from "./minting-page.module.css";
  
  // Put Your NFT Drop Contract address from the dashboard here
- const myNftDropContractAddress = "0xBA5dcA17a2B11Dd29f93D0f1dD37D1283109feD9";
+ const myTokenDropContractAddress = "0xBA5dcA17a2B11Dd29f93D0f1dD37D1283109feD9";
  
- const Minting: NextPage = () => {
-   const nftDrop = useNFTDrop(myNftDropContractAddress);
+ const TokenMinting: NextPage = () => {
+   const tokenDrop = useTokenDrop(myTokenDropContractAddress);
    const address = useAddress();
    const connectWithMetamask = useMetamask();
    const isOnWrongNetwork = useNetworkMismatch();
@@ -42,24 +42,20 @@
    }>();
  
    const [totalSupply, setTotalSupply] = useState<number>();
-   const [claimedSupply, setClaimedSupply] = useState<number>();
  
    useEffect(() => {
      (async () => {
-       const claimed = await nftDrop?.totalClaimedSupply();
-       const totalsupply = await nftDrop?.totalSupply();
+       const totalsupply = await tokenDrop?.totalSupply();
  
-       setClaimedSupply(claimed?.toNumber());
-       setTotalSupply(totalsupply?.toNumber());
- 
+       
        // Load NFT Drop Contract metadata
-       const metadata = await nftDrop?.metadata.get();
+       const metadata = await tokenDrop?.metadata.get();
        setMetadata(metadata);
      })();
-   }, [nftDrop]);
+   }, [tokenDrop]);
  
    // Loading state while we fetch the metadata
-   if (!nftDrop || !contractMetadata) {
+   if (!tokenDrop || !contractMetadata) {
      return <div className={styles.container}>Loading...</div>;
    }
  
@@ -78,7 +74,7 @@
      setClaiming(true);
  
      try {
-       const minted = await nftDrop?.claim(1);
+       const minted = await tokenDrop?.claim(1);
        console.log(minted);
        alert(`Successfully minted NFT!`);
      } catch (error) {
@@ -144,9 +140,8 @@
                <p>Total Minted</p>
              </div>
              <div className={styles.mintAreaRight}>
-               {claimedSupply && totalSupply ? (
+               {totalSupply ? (
                  <p>
-                   <b>{claimedSupply}</b>
                    {" / "}
                    {totalSupply}
                  </p>
@@ -162,10 +157,4 @@
    );
  };
  
- export default Minting;
-
- 
-
-
-
-
+ export default TokenMinting;

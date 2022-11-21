@@ -36,7 +36,7 @@ const ListedNfts: NextPage = () => {
 
   return (
     <>{/* Content */}
-    <div className={styles.container}>
+    <div className={styles.container}> 
         <div className="main">
           {
             // If the listings are loading, show a loading message
