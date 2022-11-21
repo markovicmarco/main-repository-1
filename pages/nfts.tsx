@@ -18,7 +18,6 @@
  import Page from '@components/page';
  import Layout from '@components/layout';
  
- import { META_DESCRIPTION } from '@lib/constants';
  import ListedNfts from '@components/thirdweb/listed';
  import { ThirdwebProvider } from '@thirdweb-dev/react';
  import { ChainId } from '@thirdweb-dev/sdk';

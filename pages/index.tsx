@@ -19,6 +19,7 @@ import { SkipNavContent } from '@reach/skip-nav';
 import Page from '@components/page';
 import ConfContent from '@components/index';
 import { META_DESCRIPTION } from '@lib/constants';
+import { useTokenDrop } from '@thirdweb-dev/react';
 
 export default function Conf() {
   const { query } = useRouter();
@@ -34,9 +35,13 @@ export default function Conf() {
     username: query.username?.toString()
   };
 
+  const tokenDropContract = useTokenDrop(
+    "0xCFbB61aF7f8F39dc946086c378D8cd997C72e2F3"
+  );
+
   return (
     <Page meta={meta} fullViewport> 
-      <SkipNavContent />
+      <SkipNavContent /> 
       <ConfContent
         defaultUserData={defaultUserData}
         defaultPageState={query.ticketNumber ? 'ticket' : 'registration'}
